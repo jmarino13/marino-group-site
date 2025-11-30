@@ -6,39 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Launch a compliant, profitable wellness or weight loss clinic in 60 days with Marino Business Consulting. Turnkey clinical, compliance, EMR, marketing, and sales systems for GLP-1, peptide, and hormone clinics." />
 
-  <!-- Basic SEO -->
-  <meta name="keywords" content="start weight loss clinic, turnkey wellness clinic, GLP-1 consulting, peptide clinic setup, medical director access, CPOM friendly, Marino Business Consulting" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Turnkey Wellness & Weight Loss Clinics | Marino Business Consulting" />
-  <meta property="og:description" content="Done-with-you turnkey builds for GLP-1, peptide, hormone and wellness clinics in as little as 60 days." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://jmarino13.github.io/marino-group-site/" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Turnkey Wellness & Weight Loss Clinics" />
-  <meta name="twitter:description" content="Launch a wellness or weight loss clinic in 60 days with Marino Business Consulting." />
-
-  <!-- Local Business Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Marino Business Consulting",
-    "url": "https://jmarino13.github.io/marino-group-site/",
-    "description": "Consulting firm specializing in turnkey wellness and weight loss clinic launches, including GLP-1, peptide, and hormone therapy models.",
-    "areaServed": "United States",
-    "founder": "Jude Marino",
-    "email": "mailto:jude@lmgmedicine.com"
-  }
-  </script>
-
   <style>
     :root {
       --bg-main: #050505;
       --bg-elevated: #111111;
-      --primary: #ffffff;
       --primary-soft: #f5f5f5;
       --accent: #e31b23;
       --border-subtle: #2d2d2d;
@@ -58,32 +29,26 @@
     a { color: var(--primary-soft); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background-color: rgba(5,5,5,0.9);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.7);
-    }
-
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
+    /* HEADER + NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background-color: rgba(5,5,5,0.95);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.5rem 0;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
+      padding: 0.6rem 0;
     }
 
     .logo img {
@@ -92,9 +57,9 @@
     }
 
     header nav ul {
+      list-style: none;
       display: flex;
       gap: 1rem;
-      list-style: none;
       font-size: 0.9rem;
     }
 
@@ -108,48 +73,98 @@
       background-color: #1f2933;
     }
 
-    /* Mobile hamburger */
-    .nav-toggle {
-      display: none;
-      border: none;
-      background: none;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 4px;
-      padding: 0.3rem;
-    }
-    .nav-toggle span {
-      width: 22px;
-      height: 2px;
-      background-color: var(--primary-soft);
-      border-radius: 999px;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-    .nav-open .nav-toggle span:nth-child(1) {
-      transform: translateY(6px) rotate(45deg);
-    }
-    .nav-open .nav-toggle span:nth-child(2) {
-      opacity: 0;
-    }
-    .nav-open .nav-toggle span:nth-child(3) {
-      transform: translateY(-6px) rotate(-45deg);
-    }
-
-    .mobile-nav-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.7);
-      z-index: 40;
-    }
-
-    .nav-menu {
+    /* HERO WITH STATIC BACKGROUND */
+    .hero {
+      position: relative;
+      min-height: 70vh;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      background:
+        linear-gradient(to bottom right, rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+        url("https://images.pexels.com/photos/6129503/pexels-photo-6129503.jpeg?auto=compress&cs=tinysrgb&w=1600")
+          center center / cover no-repeat;
     }
 
-    /* Buttons */
+    .hero-overlay {
+      width: 100%;
+      padding: 4rem 0 4.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      color: var(--primary-soft);
+      font-weight: 700;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background-color: #1f2933;
+      color: var(--text-muted);
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card {
+      background-color: rgba(17,17,17,0.98);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.7);
+      font-size: 0.9rem;
+    }
+
+    .hero-card h2 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.6rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card ul {
+      list-style: none;
+    }
+
+    .hero-card li::before {
+      content: "• ";
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* BUTTONS */
     .btn {
       display: inline-block;
       padding: 0.8rem 1.4rem;
@@ -161,13 +176,14 @@
       font-size: 0.95rem;
       cursor: pointer;
       text-align: center;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+      transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .btn:hover {
       background-color: #b0151b;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.7);
       transform: translateY(-1px);
+      text-decoration: none;
     }
 
     .btn-outline {
@@ -180,139 +196,7 @@
       background-color: rgba(227,27,35,0.12);
     }
 
-    /* Sticky CTA */
-    .sticky-cta {
-      position: fixed;
-      right: 1.5rem;
-      bottom: 1.5rem;
-      z-index: 60;
-      padding: 0.7rem 1.3rem;
-      border-radius: 999px;
-      background-color: var(--accent);
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.9rem;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.7);
-    }
-    .sticky-cta:hover {
-      background-color: #b0151b;
-      text-decoration: none;
-    }
-
-    /* Hero with background video */
-    /* HERO with static background image */
-.hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  background:
-    linear-gradient(to bottom right, rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
-    url("https://images.pexels.com/photos/6129503/pexels-photo-6129503.jpeg?auto=compress&cs=tinysrgb&w=1600")
-      center center / cover no-repeat;
-}
-
-.hero-video {
-  display: none; /* no video needed anymore */
-}
-
-.hero-overlay {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  padding: 4rem 0 4.5rem;
-}
-
-    }
-
-  /* Default: single column (mobile/tablet) */
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  align-items: flex-start;
-}
-
-/* Desktop: two columns */
-@media (min-width: 900px) {
-  .hero-grid {
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-    align-items: center;
-  }
-}
-
-
-    .hero h1 {
-      font-size: 2.6rem;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-      color: var(--primary-soft);
-      font-weight: 700;
-    }
-
-    .hero p.lead {
-      font-size: 1.05rem;
-      margin-bottom: 1.2rem;
-      color: var(--text-main);
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .badge {
-      font-size: 0.8rem;
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
-      background-color: rgba(31,41,51,0.9);
-      color: var(--text-muted);
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-note {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .hero-card {
-      background-color: rgba(17,17,17,0.9);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-      border: 1px solid var(--border-subtle);
-      backdrop-filter: blur(6px);
-    }
-
-    .hero-card h2 {
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-    }
-
-    .hero-card ul {
-      list-style: none;
-      font-size: 0.9rem;
-    }
-
-    .hero-card li::before {
-      content: "• ";
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    /* Sections */
+    /* GENERAL SECTIONS */
     section {
       padding: 3.5rem 0;
     }
@@ -359,6 +243,7 @@
       font-weight: 600;
     }
 
+    /* TIMELINE */
     .timeline {
       border-left: 2px solid var(--border-subtle);
       padding-left: 1.2rem;
@@ -383,53 +268,7 @@
       color: var(--primary-soft);
     }
 
-    .stock-strip {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .stock-strip img {
-      width: 100%;
-      border-radius: 0.75rem;
-      object-fit: cover;
-      height: 180px;
-      filter: grayscale(20%);
-    }
-
-    .testimonial {
-      font-size: 0.9rem;
-      font-style: italic;
-      border-left: 3px solid var(--accent);
-      padding-left: 0.75rem;
-      margin-bottom: 1.2rem;
-      color: var(--text-main);
-    }
-
-    .testimonial span {
-      display: block;
-      margin-top: 0.4rem;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .faq-item {
-      margin-bottom: 1rem;
-    }
-
-    .faq-item h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.25rem;
-      font-weight: 600;
-      color: var(--primary-soft);
-    }
-
-    .faq-item p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
+    /* ABOUT */
     .about-layout {
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
@@ -456,7 +295,40 @@
       color: var(--text-muted);
     }
 
-    /* Contact Form */
+    .testimonial {
+      font-size: 0.9rem;
+      font-style: italic;
+      border-left: 3px solid var(--accent);
+      padding-left: 0.75rem;
+      margin-bottom: 1.2rem;
+      color: var(--text-main);
+    }
+
+    .testimonial span {
+      display: block;
+      margin-top: 0.4rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+
+    .faq-item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+      color: var(--primary-soft);
+    }
+
+    .faq-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* CONTACT FORM */
     .form {
       display: grid;
       gap: 1rem;
@@ -491,6 +363,7 @@
       resize: vertical;
     }
 
+    /* FOOTER */
     footer {
       padding: 2rem 0;
       font-size: 0.8rem;
@@ -499,127 +372,49 @@
       border-top: 1px solid var(--border-subtle);
     }
 
-    footer nav {
-      margin-bottom: 0.6rem;
-    }
-
     footer nav a {
       margin: 0 0.4rem;
       font-size: 0.85rem;
     }
 
-    /* Fade-in animation */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(12px);
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-
-    .fade-delay-1 { animation-delay: 0.15s; }
-    .fade-delay-2 { animation-delay: 0.3s; }
-    .fade-delay-3 { animation-delay: 0.45s; }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
       }
     }
 
-   /* Desktop: two columns */
-@media (min-width: 900px) {
-  .hero-grid {
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-    align-items: center;
-  }
-}
-
-      .nav-menu {
-        position: fixed;
-        inset: 56px 0 auto 0;
-        background-color: rgba(5,5,5,0.98);
-        padding: 1rem 1.5rem 1.5rem;
-        display: none;
-        flex-direction: column;
-        z-index: 45;
-      }
-
-      .nav-menu ul {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .nav-toggle {
-        display: flex;
-      }
-
-      .nav-open .nav-menu {
-        display: flex;
-      }
-
-      .mobile-nav-overlay.nav-open-overlay {
-        display: block;
+    @media (max-width: 800px) {
+      .grid-3,
+      .grid-2,
+      .form-row,
+      .about-layout {
+        grid-template-columns: 1fr;
       }
 
       header nav ul {
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
 
-     /* HERO with background video – override */
-.hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-}
+      .hero {
+        padding-top: 0.5rem;
+      }
 
-.hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.55);
-  pointer-events: none;
-}
-
-.hero-overlay {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  padding: 4rem 0 4.5rem;
-  background: radial-gradient(circle at top left, rgba(26,26,26,0.7), rgba(5,5,5,0.85));
-}
-
+      .hero h1 {
+        font-size: 2.1rem;
+      }
 
       .about-photo img {
         width: 220px;
         height: 220px;
       }
     }
-    /* Layout override to ensure card is on the right on desktop */
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  align-items: flex-start;
-}
-
-/* On wider screens (desktop), put snapshot card on the right */
-@media (min-width: 900px) {
-  .hero-grid {
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-    align-items: center;
-  }
-}
-
   </style>
 </head>
 
 <body>
-
-<div class="mobile-nav-overlay" id="mobileOverlay"></div>
 
 <header id="top">
   <div class="container nav">
@@ -641,12 +436,12 @@
   </div>
 </header>
 
-<!-- HERO with background video -->
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-overlay">
     <div class="container hero-grid">
-      <!-- LEFT: tightened copy -->
-      <div class="fade-in">
+      <!-- LEFT -->
+      <div>
         <h1>Open a Revenue-Ready Wellness or Weight Loss Clinic in 60 Days</h1>
         <p class="lead">
           I help you go from idea to doors-open with a fully built clinic: medical director and NP coverage, bulk-rate pharmacies, EMR, and a launch plan that starts selling GLP-1s, peptides, and hormone therapies from day one.
@@ -669,8 +464,8 @@
         </p>
       </div>
 
-      <!-- RIGHT: Turnkey snapshot card -->
-      <div class="fade-in fade-delay-1">
+      <!-- RIGHT -->
+      <div>
         <div class="hero-card">
           <h2>Turnkey Clinic Snapshot</h2>
           <ul>
@@ -686,34 +481,27 @@
   </div>
 </section>
 
-
 <!-- WHY -->
 <section id="why">
   <div class="container">
-    <h2 class="section-title">Why Work With Marino Business Consulting?</h2>
+    <h2 class="section-title">Why Marino Business Consulting?</h2>
     <p class="section-subtitle">
-      Most clinics spend 6–12 months and thousands of dollars guessing their way through structure, vendors, marketing, and compliance. We give you a proven, fully built system so you can launch fast and confidently.
+      Most clinics spend 6–12 months and thousands of dollars guessing through structure, vendors, marketing, and compliance. I give you a proven, fully built system so you can launch fast and confidently.
     </p>
 
-    <div class="grid-3 fade-in">
+    <div class="grid-3">
       <div class="card">
         <h3>Speed to Revenue</h3>
-        <p>Our structured system is designed to get you operational and enrolling patients in as little as 60 days, instead of dragging through a year-long build-out.</p>
+        <p>Structured builds designed to get you operational and enrolling patients in roughly 60 days, instead of dragging through a year-long experiment.</p>
       </div>
       <div class="card">
         <h3>Clinical & Compliance Ready</h3>
-        <p>Medical director & NP access, CPOM-aware structures, HIPAA language, consents, and compliance templates — all prepared for legal review and customization.</p>
+        <p>Access to medical director & NP networks, CPOM-aware structures, HIPAA language, and consent templates to take to your legal team.</p>
       </div>
       <div class="card">
-        <h3>Growth Engine Built-In</h3>
-        <p>Access to a marketing agency with a proven track record in wellness and aesthetics, plus sales scripts and referral playbooks tailored for doctors and local partners.</p>
+        <h3>Growth Engine Built In</h3>
+        <p>Access to a marketing agency with a proven track record plus sales scripts and referral playbooks to grow beyond word of mouth.</p>
       </div>
-    </div>
-
-    <div class="stock-strip fade-in fade-delay-1">
-      <img src="https://images.pexels.com/photos/6146910/pexels-photo-6146910.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Clinic team meeting">
-      <img src="https://images.pexels.com/photos/6129503/pexels-photo-6129503.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Wellness consultation">
-      <img src="https://images.pexels.com/photos/7578802/pexels-photo-7578802.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Medical professional reviewing results">
     </div>
   </div>
 </section>
@@ -721,67 +509,31 @@
 <!-- 60-DAY LAUNCH -->
 <section id="launch">
   <div class="container">
-    <h2 class="section-title">The 60-Day Turnkey Clinic Launch</h2>
+    <h2 class="section-title">The 60-Day Turnkey Launch</h2>
     <p class="section-subtitle">
-      A structured, high-efficiency launch system that handles everything from clinical oversight and compliance to operations, marketing, and sales.
+      A clear, no-fluff roadmap from idea to first enrolled patients in your wellness or weight loss clinic.
     </p>
 
-    <div class="timeline fade-in">
+    <div class="timeline">
       <div class="timeline-step">
         <span>Weeks 1–2</span>
-        <h3>Vision, Structure & Compliance</h3>
-        <p>Clarify your model (weight loss, peptides, hormones, or full-spectrum wellness), define ownership structure, and map state-specific rules including CPOM and supervision requirements.</p>
+        <h3>Model, Structure & Compliance</h3>
+        <p>Clarify your service mix (GLP-1s, peptides, hormones), align on ownership and CPOM considerations, and map the regulatory landscape in your state.</p>
       </div>
-
       <div class="timeline-step">
         <span>Weeks 2–3</span>
         <h3>Clinical & Pharmacy Infrastructure</h3>
-        <p>Connect with medical director and NP partners, align on protocols, and plug into pharmacies offering bulk pricing on GLP-1s, peptides, and hormone therapies.</p>
+        <p>Connect with medical director and NP partners, structure collaborative agreements, and plug into pharmacies offering bulk pricing on key medications.</p>
       </div>
-
       <div class="timeline-step">
         <span>Weeks 3–5</span>
         <h3>Systems, EMR & Operations</h3>
-        <p>EMR onboarding at bulk rates, patient intake flows, telehealth, lab and e-prescribe workflows, plus detailed SOPs for daily operations and follow-up cadence.</p>
+        <p>EMR onboarding, intake workflows, telehealth and follow-up cadence, patient communication templates, and day-to-day SOPs for staff.</p>
       </div>
-
       <div class="timeline-step">
         <span>Weeks 5–8</span>
-        <h3>Brand, Marketing & Sales Engine</h3>
-        <p>Website and offer positioning, launch campaigns with a proven marketing agency, and a complete sales & doctor referral playbook so you don’t start from zero.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT'S INCLUDED -->
-<section id="included">
-  <div class="container">
-    <h2 class="section-title">What’s Included</h2>
-    <p class="section-subtitle">
-      Everything you need to open doors and start helping patients — not just a logo and a lease.
-    </p>
-
-    <div class="grid-2 fade-in">
-      <div class="card">
-        <h3>Clinical Infrastructure</h3>
-        <p>Access to a vetted medical director & nurse practitioner network with guidance on collaborative practice agreements, chart review, and oversight expectations.</p>
-        <p>Includes templates for new patient intake, clinical protocols, and follow-up scheduling for GLP-1s, peptides, and hormone therapies.</p>
-      </div>
-
-      <div class="card">
-        <h3>Compliance, HIPAA & Forms</h3>
-        <p>Foundational compliance framework including HIPAA language, privacy practices, and consent form templates for medications, telehealth, and membership programs — ready for your attorney to customize.</p>
-      </div>
-
-      <div class="card">
-        <h3>Systems, EMR & Operations</h3>
-        <p>EMR onboarding at negotiated bulk pricing, configuration for telehealth, e-prescribe, labs, and secure messaging. Plus step-by-step SOPs for front desk, clinical staff, and follow-up workflows.</p>
-      </div>
-
-      <div class="card">
-        <h3>Marketing, Sales & Referral Playbooks</h3>
-        <p>Access to a marketing agency with a proven track record in med spas, wellness, and aesthetics. You also receive a complete sales script library and a doctor referral playbook so local providers know exactly how to send patients your way.</p>
+        <h3>Brand, Marketing & Sales Execution</h3>
+        <p>Positioning, offer design, launch campaigns with a vetted marketing agency, and referral paths for local doctors and partners.</p>
       </div>
     </div>
   </div>
@@ -790,23 +542,23 @@
 <!-- WHO WE SERVE -->
 <section id="who">
   <div class="container">
-    <h2 class="section-title">Who We Serve</h2>
+    <h2 class="section-title">Who I Work With</h2>
     <p class="section-subtitle">
-      We partner with medical providers, entrepreneurs, and established practices who are serious about building sustainable, compliance-first wellness clinics.
+      I partner with providers, med spas, and entrepreneurs who are serious about building sustainable, compliance-first clinics.
     </p>
 
-    <div class="grid-3 fade-in">
+    <div class="grid-3">
       <div class="card">
         <h3>Medical Providers</h3>
-        <p>Physicians, NPs, and PAs ready to launch or expand a cash-pay clinic focused on metabolic health, peptides, or hormone optimization.</p>
+        <p>Physicians, NPs, and PAs launching or upgrading a cash-pay clinic focused on metabolic health, peptide stacks, or hormone optimization.</p>
       </div>
       <div class="card">
         <h3>Med Spas & Dental Practices</h3>
-        <p>Existing practices adding GLP-1s, peptide stacks, IV therapy, and hormone programs to increase revenue per patient and improve outcomes.</p>
+        <p>Existing practices adding GLP-1s, peptides, IV therapy, or hormone programs to increase revenue per patient and strengthen outcomes.</p>
       </div>
       <div class="card">
         <h3>Entrepreneurs & Investors</h3>
-        <p>Business leaders launching clinics in partnership with licensed providers who want a clear, CPOM-aware path instead of trial-and-error.</p>
+        <p>Operators pairing with licensed providers and wanting a clear, CPOM-aware playbook instead of starting from scratch.</p>
       </div>
     </div>
   </div>
@@ -817,19 +569,19 @@
   <div class="container">
     <h2 class="section-title">About Jude Marino</h2>
     <p class="section-subtitle">
-      From corporate “Leader of the Year” to builder of high-performing wellness clinics.
+      From multi-time corporate Leader of the Year to builder of high-performing wellness clinics.
     </p>
 
-    <div class="about-layout fade-in">
+    <div class="about-layout">
       <div>
         <p>
-          For over two decades, Jude Marino led large sales and operations teams in the telecom industry, becoming a multi-time Leader of the Year and Winner’s Circle honoree. His specialty: turning complex, underperforming regions into efficient, high-growth operations.
+          For over two decades, I led large sales and operations teams in the telecom industry, turning underperforming regions into award-winning organizations. That experience taught me how to build scalable systems, motivate teams, and execute complex launches.
         </p>
         <p>
-          Today, as the founder of Marino Business Consulting, Jude brings that same discipline to wellness, weight loss, and longevity clinics. He has helped launch and scale GLP-1, peptide, hormone, and med spa concepts with a relentless focus on compliance, patient experience, and profitability.
+          Today, through Marino Business Consulting, I bring that operational discipline to wellness, weight loss, and longevity clinics — including GLP-1, peptide, and hormone-based models. I focus on bridging the gap between clinical excellence and business performance.
         </p>
         <p>
-          When you work with Jude, you’re not just hiring a consultant — you’re getting a builder, operator, and sales leader who understands how to turn a vision into a functioning, revenue-generating business.
+          If you want more than a logo and a lease — if you want a functioning, revenue-ready clinic with clear playbooks — we’ll work well together.
         </p>
       </div>
 
@@ -838,45 +590,33 @@
         <p>Founder, Marino Business Consulting</p>
       </div>
     </div>
-
-    <div class="grid-2 fade-in fade-delay-1" style="margin-top:2rem;">
-      <div class="testimonial">
-        “We opened in under 60 days with clinical coverage, SOPs, pricing, and marketing ready. Jude thought of things we didn’t even know to ask.”
-        <span>— Precision Wellness</span>
-      </div>
-      <div class="testimonial">
-        “He didn’t just give advice. He built a system our providers and staff could actually follow — from consult scripts to doctor referral pathways.”
-        <span>— The Smile Spa Wellness</span>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- FAQ -->
 <section id="faqs">
   <div class="container">
-    <h2 class="section-title">FAQs</h2>
+    <h2 class="section-title">Frequently Asked Questions</h2>
 
-    <div class="grid-2 fade-in">
+    <div class="grid-2">
       <div>
         <div class="faq-item">
           <h3>Do I need to be a medical provider?</h3>
-          <p>No. Many clients are entrepreneurs partnering with licensed providers. We help you think through structures that respect CPOM and state law, then your attorney finalizes everything.</p>
+          <p>No. Many clients are entrepreneurs partnered with licensed providers. I help you think through structures that respect CPOM and state law; your attorney finalizes everything.</p>
         </div>
         <div class="faq-item">
           <h3>Can you guarantee a 60-day launch?</h3>
-          <p>We provide a 60-day launch framework and manage the build, but timing depends on your responsiveness, state requirements, and third-party approvals. You’ll have a clear timeline and milestones from day one.</p>
+          <p>The framework is designed around ~60 days. Actual timing depends on your responsiveness, state requirements, and third-party approvals, but you’ll have clear milestones from day one.</p>
         </div>
       </div>
-
       <div>
         <div class="faq-item">
           <h3>Which states do you support?</h3>
-          <p>We work with clinics across the U.S. and factor in your state’s rules around supervision, telehealth, and ownership. On the initial call, we’ll confirm fit and any special considerations.</p>
+          <p>I work with clients across the U.S. We factor in your state’s rules around supervision, telehealth, and ownership to decide if we’re a good fit.</p>
         </div>
         <div class="faq-item">
-          <h3>Are medications and marketing spend included?</h3>
-          <p>No. You contract directly with pharmacies and the marketing agency. We negotiate structure, access, and strategy so you can plug into proven partners instead of starting from scratch.</p>
+          <h3>Are medications or ad spend included?</h3>
+          <p>No. You contract directly with pharmacies and the marketing agency. I help you select and structure those relationships so you’re not guessing.</p>
         </div>
       </div>
     </div>
@@ -885,17 +625,17 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="container fade-in">
-    <h2 class="section-title">Start Your Clinic</h2>
+  <div class="container">
+    <h2 class="section-title">Start a Conversation</h2>
     <p class="section-subtitle">
-      If you’re serious about launching or upgrading a wellness or weight loss clinic, complete the form below and then grab a time on Jude’s calendar.
+      If you’re serious about launching or upgrading a clinic, share a few details below and then book a time on my calendar.
     </p>
 
     <div style="margin-bottom:1.5rem;">
       <a href="https://calendly.com/your-calendly-link" target="_blank" class="btn">Schedule on Calendly</a>
     </div>
 
-    <!-- IMPORTANT: Replace YOUR_FORMSPREE_ID with your real Formspree form URL path -->
+    <!-- Replace the action URL with your real Formspree URL -->
     <form class="form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
       <div class="form-row">
         <div>
@@ -939,7 +679,7 @@
       </div>
 
       <div>
-        <label>Tell us about the clinic you want to build</label>
+        <label>Tell me about the clinic you want to build</label>
         <textarea name="message" placeholder="Describe your vision, services, and goals..." required></textarea>
       </div>
 
@@ -957,8 +697,6 @@
       <a href="#top">Home</a> |
       <a href="services.html">Services</a> |
       <a href="case-studies.html">Case Studies</a> |
-      <a href="#about">About</a> |
-      <a href="#contact">Contact</a> |
       <a href="terms.html">Terms</a> |
       <a href="privacy.html">Privacy</a>
     </nav>
@@ -967,37 +705,8 @@
   </div>
 </footer>
 
-<a href="https://calendly.com/your-calendly-link" target="_blank" class="sticky-cta">Book Strategy Call</a>
-
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
-
-  const navToggle = document.getElementById('navToggle');
-  const navMenu = document.getElementById('navMenu');
-  const mobileOverlay = document.getElementById('mobileOverlay');
-  const body = document.body;
-
-  function closeNav() {
-    body.classList.remove('nav-open');
-    mobileOverlay.classList.remove('nav-open-overlay');
-  }
-
-  navToggle.addEventListener('click', () => {
-    const isOpen = body.classList.toggle('nav-open');
-    if (isOpen) {
-      mobileOverlay.classList.add('nav-open-overlay');
-    } else {
-      mobileOverlay.classList.remove('nav-open-overlay');
-    }
-  });
-
-  mobileOverlay.addEventListener('click', closeNav);
-
-  navMenu.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A') {
-      closeNav();
-    }
-  });
 </script>
 
 </body>
