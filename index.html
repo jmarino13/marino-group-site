@@ -598,6 +598,22 @@
         height: 220px;
       }
     }
+    /* Layout override to ensure card is on the right on desktop */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+/* On wider screens (desktop), put snapshot card on the right */
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: center;
+  }
+}
+
   </style>
 </head>
 
@@ -610,25 +626,18 @@
     <div class="logo">
       <img src="marino-logo.png" alt="Marino Group Logo">
     </div>
-
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-
-    <div class="nav-menu" id="navMenu">
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#launch">60-Day Launch</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="#who">Who We Serve</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#faqs">FAQs</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#launch">60-Day Launch</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="#who">Who We Serve</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
@@ -636,38 +645,40 @@
 <section class="hero" id="home">
   <div class="hero-overlay">
     <div class="container hero-grid">
+      <!-- LEFT: tightened copy -->
       <div class="fade-in">
-        <h1>Launch Your Wellness or Weight Loss Clinic in 60 Days</h1>
+        <h1>Open a Revenue-Ready Wellness or Weight Loss Clinic in 60 Days</h1>
         <p class="lead">
-          Turnkey, compliant, and ready to generate revenue — with access to a medical director, nurse practitioners, bulk-rate pharmacies, EMR, marketing, and proven processes to begin offering GLP-1s, peptides, and hormone therapies.
+          I help you go from idea to doors-open with a fully built clinic: medical director and NP coverage, bulk-rate pharmacies, EMR, and a launch plan that starts selling GLP-1s, peptides, and hormone therapies from day one.
         </p>
 
         <div class="hero-badges">
-          <span class="badge">Turnkey Clinic Build</span>
-          <span class="badge">Clinical + Compliance</span>
-          <span class="badge">Marketing Engine Included</span>
-          <span class="badge">Sales & Referral Playbooks</span>
+          <span class="badge">Turnkey clinic build-out</span>
+          <span class="badge">Clinical & compliance systems</span>
+          <span class="badge">Marketing & sales playbooks</span>
+          <span class="badge">CPOM-aware structures</span>
         </div>
 
         <div class="hero-cta">
-          <a href="https://calendly.com/your-calendly-link" target="_blank" class="btn">Book Strategy Call</a>
-          <a href="#launch" class="btn btn-outline">See 60-Day Roadmap</a>
+          <a href="https://calendly.com/your-calendly-link" target="_blank" class="btn">Book a 20-Min Strategy Call</a>
+          <a href="#launch" class="btn btn-outline">See the 60-Day Roadmap</a>
         </div>
 
         <p class="hero-note">
-          *Clinical and legal structures vary by state. All documents must be reviewed by your attorney and medical leadership.
+          You bring the vision and providers. I bring the structure, systems, and playbooks — all reviewed by your own legal and clinical teams.
         </p>
       </div>
 
+      <!-- RIGHT: Turnkey snapshot card -->
       <div class="fade-in fade-delay-1">
         <div class="hero-card">
           <h2>Turnkey Clinic Snapshot</h2>
           <ul>
-            <li>Access to medical director & NP network</li>
-            <li>Pharmacies with bulk pricing on GLP-1s, peptides & hormones</li>
-            <li>EMR & telehealth setup, configured for wellness clinics</li>
-            <li>Sales, referral & marketing playbooks included</li>
-            <li>Compliance, HIPAA, and consent form templates</li>
+            <li>Medical director & NP network access</li>
+            <li>Pharmacy partners with bulk pricing</li>
+            <li>EMR & workflows tailored to wellness</li>
+            <li>Compliance, HIPAA & consent templates</li>
+            <li>Launch marketing & referral playbooks</li>
           </ul>
         </div>
       </div>
