@@ -555,13 +555,33 @@
         flex-direction: column;
       }
 
-      .hero-overlay {
-        padding-top: 3rem;
-      }
+     /* HERO with background video – override */
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
 
-      .hero h1 {
-        font-size: 2.1rem;
-      }
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.35);
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 4rem 0 4.5rem;
+  background: radial-gradient(circle at top left, rgba(26,26,26,0.7), rgba(5,5,5,0.85));
+}
+
 
       .about-photo img {
         width: 220px;
