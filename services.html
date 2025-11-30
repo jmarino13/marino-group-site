@@ -10,7 +10,6 @@
     :root {
       --bg-main: #050505;
       --bg-elevated: #111111;
-      --primary: #ffffff;
       --primary-soft: #f5f5f5;
       --accent: #e31b23;
       --border-subtle: #2d2d2d;
@@ -30,6 +29,12 @@
     a { color: var(--primary-soft); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
     header {
       position: sticky;
       top: 0;
@@ -38,17 +43,11 @@
       border-bottom: 1px solid var(--border-subtle);
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.5rem 0;
+      padding: 0.6rem 0;
     }
 
     .logo img {
@@ -57,15 +56,16 @@
     }
 
     nav ul {
+      list-style: none;
       display: flex;
       gap: 1rem;
-      list-style: none;
       font-size: 0.9rem;
     }
 
     nav a {
       padding: 0.35rem 0.7rem;
       border-radius: 999px;
+      white-space: nowrap;
     }
 
     nav a:hover {
@@ -242,9 +242,12 @@
       font-size: 0.85rem;
     }
 
-    @media (max-width: 800px) {
-      nav ul { display: none; }
+    @media (max-width: 900px) {
       .grid-2, .feature-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 800px) {
+      nav ul { flex-wrap: wrap; justify-content: flex-end; }
     }
   </style>
 </head>
@@ -259,6 +262,7 @@
     <nav>
       <ul>
         <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#launch">60-Day Launch</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="index.html#contact">Contact</a></li>
@@ -275,10 +279,10 @@
 
     <h1 class="section-title">Services & Packages</h1>
     <p class="section-subtitle">
-      Whether you want a true turnkey build or a phased engagement, every package is built around one goal: launch a compliant, profitable clinic with a proven growth engine.
+      Two ways to work together: a focused, one-time buildout to get your clinic launched quickly, or a longer-term partnership that includes launch plus ongoing optimization.
     </p>
     <div class="hero-highlight">
-      <strong>Two core ways to work together:</strong> a one-time, done-with-you build-out or a longer-term partnership with ongoing support, mentorship, and optimization.
+      <strong>Every engagement includes clinical infrastructure, compliance frameworks, EMR and workflow design, and access to marketing and sales playbooks.</strong>
     </div>
   </div>
 </section>
@@ -307,7 +311,7 @@
           <li>Launch campaign plan with marketing agency</li>
         </ul>
         <p class="note">
-          Ideal for owners who want to move quickly, have a clear vision, and prefer a one-time investment to launch the clinic right the first time.
+          Ideal if you want to move quickly, have a clear vision, and prefer a one-time investment to launch the clinic right the first time.
         </p>
       </div>
 
@@ -327,7 +331,7 @@
           <li>Preferred access for future locations</li>
         </ul>
         <p class="note">
-          Best for clients who want a long-term strategic partner to help refine operations, scale profitably, and expand to multiple locations.
+          Best if you want a long-term strategic partner to help refine operations, scale profitably, and expand to multiple locations.
         </p>
       </div>
     </div>
@@ -340,9 +344,9 @@
 
 <section>
   <div class="container">
-    <h2 class="section-title">What Every Package Includes</h2>
+    <h2 class="section-title">What Every Engagement Includes</h2>
     <p class="section-subtitle">
-      No matter which option you choose, these pillars are built into the engagement so you’re not left chasing vendors or guessing at how to connect the dots.
+      No matter which option you choose, you’re not left chasing vendors or patching together random advice. These pillars are built into the way we work.
     </p>
 
     <div class="feature-grid">
@@ -386,20 +390,9 @@
     <p class="note">
       All legal, financial, and clinical decisions are ultimately made by your own professional advisors. Marino Business Consulting does not provide medical or legal advice.
     </p>
-  </div>
-</section>
 
-<section>
-  <div class="container">
-    <h2 class="section-title">Next Steps</h2>
-    <p class="section-subtitle">
-      The simplest way to see if we’re a fit is a 20-minute conversation. We’ll talk through your market, budget, timeline, and which package lines up best.
-    </p>
-
-    <div class="cta-center">
+    <div class="cta-center" style="margin-top:2rem;">
       <a href="index.html#contact" class="btn btn-outline">Return to Main Site</a>
-      &nbsp;&nbsp;
-      <a href="https://calendly.com/your-calendly-link" target="_blank" class="btn">Book Strategy Call</a>
     </div>
   </div>
 </section>
