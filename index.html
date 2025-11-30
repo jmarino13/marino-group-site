@@ -429,6 +429,33 @@
         width: 220px;
         height: 220px;
       }
+@media (max-width: 750px) {
+  header .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header .logo img {
+    height: 48px;
+  }
+
+  header nav ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    padding-top: 0.75rem;
+    border-top: 1px solid #222;
+  }
+
+  header nav ul li a {
+    padding: 0.45rem 0.75rem;
+    background: #1a1a1a;
+    border-radius: 6px;
+  }
+}
+
     }
   </style>
 </head>
