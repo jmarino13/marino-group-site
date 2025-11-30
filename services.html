@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Services & Packages | Marino Business Consulting</title>
+  <title>Start Your Clinic | Marino Business Consulting</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Service packages from Marino Business Consulting for turnkey wellness and weight loss clinic launches, including clinical, compliance, marketing, and operations support." />
+  <meta name="description" content="Turnkey wellness and weight loss clinic launch services from Marino Business Consulting. 60-day buildout, medical infrastructure, pharmacy contracts, EMR, compliance, marketing, and sales systems." />
 
   <style>
     :root {
       --bg-main: #050505;
       --bg-elevated: #111111;
+      --primary: #ffffff;
       --primary-soft: #f5f5f5;
       --accent: #e31b23;
       --border-subtle: #2d2d2d;
@@ -29,25 +30,32 @@
     a { color: var(--primary-soft); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(5,5,5,0.9);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.7);
+    }
+
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background-color: rgba(5,5,5,0.95);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.6rem 0;
+      padding: 0.5rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
     .logo img {
@@ -56,20 +64,49 @@
     }
 
     nav ul {
-      list-style: none;
       display: flex;
       gap: 1rem;
+      list-style: none;
       font-size: 0.9rem;
     }
 
     nav a {
       padding: 0.35rem 0.7rem;
       border-radius: 999px;
-      white-space: nowrap;
     }
 
     nav a:hover {
       background-color: #1f2933;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      background-color: var(--accent);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    }
+
+    .btn:hover {
+      background-color: #b0151b;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--primary-soft);
+      border: 1px solid var(--accent);
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(227,27,35,0.12);
     }
 
     section {
@@ -94,39 +131,95 @@
       max-width: 700px;
     }
 
-    .hero-services {
+    .hero {
       background: radial-gradient(circle at top left, #1a1a1a, #050505);
-      padding: 3.5rem 0 4rem;
+      padding: 3.5rem 0 4.2rem;
     }
 
-    .hero-services h1 {
-      font-size: 2.3rem;
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
       margin-bottom: 0.5rem;
+      color: var(--primary-soft);
+    }
+
+    .hero-tag {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero p.lead {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
     }
 
     .hero-highlight {
-      margin-top: 1rem;
       border-left: 3px solid var(--accent);
-      padding-left: 0.75rem;
-      font-size: 0.95rem;
+      padding-left: 0.8rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
+      margin-bottom: 1.5rem;
     }
 
-    .breadcrumbs {
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-note {
       font-size: 0.8rem;
       color: var(--text-muted);
-      margin-bottom: 1rem;
     }
 
-    .breadcrumbs a {
-      color: var(--text-muted);
+    .hero-card {
+      background-color: var(--bg-elevated);
+      border-radius: 1rem;
+      padding: 1.4rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.9rem;
     }
 
-    .grid-2 {
+    .hero-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-soft);
+    }
+
+    .hero-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .hero-card li {
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-card li::before {
+      content: "• ";
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .grid-3, .grid-2 {
       display: grid;
       gap: 1.5rem;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
     .card {
       background-color: #121212;
@@ -144,25 +237,10 @@
       font-weight: 600;
     }
 
-    .price-tag {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-      color: var(--accent);
-    }
-
-    .price-caption {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
-    }
-
     .pill-list {
       list-style: none;
-      margin: 0.75rem 0 0.5rem;
-      padding: 0;
+      margin-top: 0.6rem;
+      padding-left: 0;
     }
 
     .pill-list li {
@@ -175,58 +253,105 @@
       font-weight: bold;
     }
 
-    .feature-grid {
+    .price-tag {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: var(--accent);
+    }
+
+    .price-caption {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .timeline {
+      border-left: 2px solid var(--border-subtle);
+      padding-left: 1.2rem;
+    }
+
+    .timeline-step {
+      margin-bottom: 1.6rem;
+    }
+
+    .timeline-step span {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-step h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+      color: var(--primary-soft);
+    }
+
+    .about-row {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.25rem;
-      margin-top: 1rem;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-photo {
+      text-align: center;
+    }
+
+    .about-photo img {
+      width: 230px;
+      height: 230px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 4px solid var(--accent);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    }
+
+    .about-photo p {
+      margin-top: 0.6rem;
       font-size: 0.9rem;
+      color: var(--text-muted);
     }
 
-    .feature-row {
+    .badge-strip {
       display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
     }
 
-    .feature-label {
+    .badge {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background-color: #1f2933;
+      color: var(--text-muted);
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+
+    .faq-item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
       font-weight: 600;
       color: var(--primary-soft);
-      min-width: 130px;
     }
 
-    .check {
-      color: var(--accent);
-      margin-right: 0.3rem;
-      font-weight: bold;
-    }
-
-    .note {
-      font-size: 0.8rem;
+    .faq-item p {
+      font-size: 0.9rem;
       color: var(--text-muted);
-      margin-top: 0.75rem;
     }
 
     .cta-center {
       text-align: center;
       margin-top: 2.5rem;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.7rem 1.3rem;
-      border-radius: 999px;
-      border: none;
-      background-color: var(--accent);
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background-color: #b0151b;
-      text-decoration: none;
     }
 
     footer {
@@ -237,17 +362,43 @@
       border-top: 1px solid var(--border-subtle);
     }
 
-    footer nav a {
-      margin: 0 0.4rem;
-      font-size: 0.85rem;
+    .fade-in {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeInUp 0.8s ease-out forwards;
     }
 
-    @media (max-width: 900px) {
-      .grid-2, .feature-grid { grid-template-columns: 1fr; }
+    .fade-delay-1 { animation-delay: 0.15s; }
+    .fade-delay-2 { animation-delay: 0.3s; }
+    .fade-delay-3 { animation-delay: 0.45s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (max-width: 800px) {
-      nav ul { flex-wrap: wrap; justify-content: flex-end; }
+      nav ul {
+        display: none;
+      }
+      .hero-layout,
+      .grid-3,
+      .grid-2,
+      .about-row {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding-top: 3rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .about-photo img {
+        width: 200px;
+        height: 200px;
+      }
     }
   </style>
 </head>
@@ -257,41 +408,152 @@
 <header>
   <div class="container nav">
     <div class="logo">
-      <img src="marino-logo.png" alt="Marino Group Logo">
+      <img src="marino-logo.png" alt="Marino Business Consulting Logo">
     </div>
     <nav>
       <ul>
         <li><a href="index.html#home">Home</a></li>
         <li><a href="index.html#launch">60-Day Launch</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<section class="hero-services">
-  <div class="container">
-    <div class="breadcrumbs">
-      <a href="index.html">Home</a> &gt; <span>Services</span>
+<!-- HERO / SALES HEADER -->
+<section class="hero">
+  <div class="container hero-layout">
+    <div class="fade-in">
+      <div class="hero-tag">Turnkey Wellness & Weight Loss Clinics</div>
+      <h1>Start Your Clinic in 60 Days — Not Someday</h1>
+      <p class="lead">
+        We don’t sell courses or theory. We build you a complete wellness or weight loss clinic: medical director, NPs, pharmacy contracts, EMR, protocols, marketing, sales scripts, and launch support — so you can start enrolling patients, fast.
+      </p>
+      <div class="hero-highlight">
+        Stop thinking about opening a clinic and start owning one. Our clients move from idea to operational in roughly 60 days with a proven playbook.
+      </div>
+      <div class="hero-actions">
+        <!-- Replace with your real Calendly link -->
+        <a href="https://calendly.com/your-calendly-link" target="_blank" class="btn">Book a Strategy Call</a>
+        <a href="#pricing" class="btn btn-outline">See Packages & Pricing</a>
+      </div>
+      <p class="hero-note">
+        This is a done-with-you buildout. You bring the vision — we bring the infrastructure, systems, and execution.
+      </p>
     </div>
 
-    <h1 class="section-title">Services & Packages</h1>
-    <p class="section-subtitle">
-      Two ways to work together: a focused, one-time buildout to get your clinic launched quickly, or a longer-term partnership that includes launch plus ongoing optimization.
-    </p>
-    <div class="hero-highlight">
-      <strong>Every engagement includes clinical infrastructure, compliance frameworks, EMR and workflow design, and access to marketing and sales playbooks.</strong>
+    <div class="fade-in fade-delay-1">
+      <div class="hero-card">
+        <h3>Your Turnkey Clinic Includes:</h3>
+        <ul>
+          <li>Access to medical director & NP network</li>
+          <li>Pharmacies with bulk pricing on GLP-1s, peptides & hormones</li>
+          <li>EMR setup at negotiated rates & complete workflows</li>
+          <li>HIPAA, consents & compliance templates</li>
+          <li>Sales scripts & doctor referral playbook</li>
+          <li>Access to a proven marketing agency</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- VALUE STACK -->
 <section>
-  <div class="container">
-    <h2 class="section-title">Engagement Options</h2>
+  <div class="container fade-in">
+    <h2 class="section-title">What You Actually Get</h2>
     <p class="section-subtitle">
-      Pricing below is typical for a single-location launch. Multi-location or franchise-style builds are scoped separately.
+      This isn’t just “consulting.” It’s a full, build-out-the-business engagement so you’re not left chasing vendors, guessing at compliance, or writing your own sales scripts at midnight.
+    </p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Clinical & Pharmacy Infrastructure</h3>
+        <ul class="pill-list">
+          <li>Medical director relationship & NP network pathways</li>
+          <li>GLP-1, peptide & hormone therapy frameworks for your providers to review and customize</li>
+          <li>Pharmacy partners with bulk pricing to protect your margins</li>
+          <li>Lab, prescription, and refill workflows</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Compliance, HIPAA & Documentation</h3>
+        <ul class="pill-list">
+          <li>HIPAA language & privacy policy templates</li>
+          <li>Consent forms for medications, telehealth & memberships</li>
+          <li>Foundational policies and procedures for daily operations</li>
+          <li>Guidance aligned with CPOM-aware structures (for your attorney to finalize)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Systems, EMR & Operations</h3>
+        <ul class="pill-list">
+          <li>EMR recommendation & onboarding at bulk rates</li>
+          <li>Clinically sound patient journey flows: intake, consults, follow-up</li>
+          <li>Telehealth integration, scheduling & tasking</li>
+          <li>Front-desk and clinical SOPs so your team knows exactly what to do</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Marketing, Sales & Launch Engine</h3>
+        <ul class="pill-list">
+          <li>Access to a marketing agency with proven success in wellness & med spas</li>
+          <li>Offer design & pricing strategy for GLP-1s, peptides & hormones</li>
+          <li>Sales scripts for phones, DMs, and in-clinic consults</li>
+          <li>Doctor & provider referral playbook to build a steady pipeline</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 60-DAY ROADMAP -->
+<section>
+  <div class="container fade-in">
+    <h2 class="section-title">Your 60-Day Launch Roadmap</h2>
+    <p class="section-subtitle">
+      We don’t wing it. We run a clear, structured plan so you know exactly what’s happening, when, and why.
+    </p>
+
+    <div class="timeline">
+      <div class="timeline-step">
+        <span>Days 0–10</span>
+        <h3>Design the Clinic & Set the Foundation</h3>
+        <p>
+          Clarify your clinic focus (weight loss, peptides, hormones, or hybrid), confirm your market, and align on brand, positioning, and pricing. Begin medical director and NP engagements, plus pharmacy introductions.
+        </p>
+      </div>
+
+      <div class="timeline-step">
+        <span>Days 11–30</span>
+        <h3>Build Systems, EMR & Compliance</h3>
+        <p>
+          Configure EMR, patient journeys, intake & follow-up flows. Install HIPAA, consents, and core SOPs. Finalize pharmacy relationships and lock in bulk-pricing structure with room for profit.
+        </p>
+      </div>
+
+      <div class="timeline-step">
+        <span>Days 31–60</span>
+        <h3>Launch, Sell & Grow</h3>
+        <p>
+          Implement launch campaigns with the marketing agency, train staff on scripts and flows, go live with consults and enrollments, and build your 90-day growth plan so momentum doesn’t stall after opening week.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING & OPTIONS -->
+<section id="pricing">
+  <div class="container fade-in">
+    <h2 class="section-title">Choose How You Want to Build</h2>
+    <p class="section-subtitle">
+      Same turnkey buildout — two different financial structures. Choose the path that matches your capital and growth goals.
     </p>
 
     <div class="grid-2">
@@ -300,19 +562,16 @@
         <div class="price-tag">$80,000</div>
         <div class="price-caption">One-Time Engagement</div>
         <p>
-          A deep, intensive build-out designed to get you from idea to operational clinic in approximately 60 days, including clinical, operational, marketing, and sales foundations.
+          A deep, intensive build designed to get you from idea to operational clinic in approximately 60 days.
         </p>
         <ul class="pill-list">
-          <li>60-day turnkey clinic launch plan & execution</li>
-          <li>Access to medical director & NP network</li>
-          <li>EMR selection, onboarding & workflow design</li>
-          <li>Compliance, HIPAA & consent templates</li>
-          <li>Sales scripts & doctor referral playbook</li>
-          <li>Launch campaign plan with marketing agency</li>
+          <li>Full clinic design & 60-day launch plan</li>
+          <li>Medical director & NP network set-up pathways</li>
+          <li>EMR setup, workflows & SOPs</li>
+          <li>Compliance templates & consents</li>
+          <li>Sales & doctor referral playbooks</li>
+          <li>Launch campaign strategy with marketing partners</li>
         </ul>
-        <p class="note">
-          Ideal if you want to move quickly, have a clear vision, and prefer a one-time investment to launch the clinic right the first time.
-        </p>
       </div>
 
       <div class="card">
@@ -320,93 +579,121 @@
         <div class="price-tag">$3,000 / month</div>
         <div class="price-caption">36-Month Partnership</div>
         <p>
-          All of the elements of the turnkey build, plus ongoing support as you grow: optimization, new service launches, leadership coaching, and marketing/sales tune-ups.
+          All the elements of the turnkey build, with ongoing strategic support as you optimize, grow, and expand your clinic.
         </p>
         <ul class="pill-list">
-          <li>Initial 60-day turnkey clinic launch</li>
-          <li>Ongoing operational & strategy sessions</li>
+          <li>Initial 60-day buildout and launch</li>
+          <li>Ongoing operational & growth strategy calls</li>
           <li>Quarterly KPI reviews & profitability tuning</li>
-          <li>Support as you add GLP-1s, peptides, IVs, hormones & more</li>
-          <li>Coordination with marketing agency as campaigns evolve</li>
-          <li>Preferred access for future locations</li>
+          <li>Support as you add new services and locations</li>
+          <li>Coordination touchpoints with your marketing agency</li>
         </ul>
-        <p class="note">
-          Best if you want a long-term strategic partner to help refine operations, scale profitably, and expand to multiple locations.
-        </p>
       </div>
     </div>
 
     <div class="cta-center">
-      <a href="https://calendly.com/your-calendly-link" target="_blank" class="btn">Talk Through the Best Fit</a>
+      <a href="https://calendly.com/your-calendly-link" target="_blank" class="btn">Talk Through Which Option Fits Best</a>
     </div>
   </div>
 </section>
 
+<!-- ABOUT / PROOF -->
 <section>
-  <div class="container">
-    <h2 class="section-title">What Every Engagement Includes</h2>
+  <div class="container fade-in">
+    <h2 class="section-title">Why Clinic Owners Choose Jude Marino</h2>
     <p class="section-subtitle">
-      No matter which option you choose, you’re not left chasing vendors or patching together random advice. These pillars are built into the way we work.
+      You’re not hiring a generic consultant. You’re partnering with a builder who has lived in operations, sales, and wellness — and knows how to turn vision into a functioning, profitable business.
     </p>
 
-    <div class="feature-grid">
-      <div class="feature-row">
-        <div class="feature-label">Clinical & Pharmacy</div>
-        <div>
-          <span class="check">✓</span>Access to medical director & NP network<br>
-          <span class="check">✓</span>Pharmacy partners with bulk pricing on GLP-1s, peptides, and hormone therapies<br>
-          <span class="check">✓</span>High-level protocol framework for provider review
+    <div class="about-row">
+      <div>
+        <p>
+          For more than two decades, Jude led large organizations in the corporate world, earning multiple Leader of the Year and Winner’s Circle awards for transforming underperforming markets into top-tier performers.
+        </p>
+        <p>
+          Today, through Marino Business Consulting, he brings that same discipline to wellness, weight loss, peptide, and hormone clinics — partnering with physicians, NPs, entrepreneurs, med spas, and dental practices that want a serious, sustainable business, not a side hustle.
+        </p>
+        <div class="badge-strip">
+          <span class="badge">GLP-1 & Peptide Clinics</span>
+          <span class="badge">Hormone & Longevity Programs</span>
+          <span class="badge">Med Spa & Dental Crossovers</span>
         </div>
       </div>
 
-      <div class="feature-row">
-        <div class="feature-label">Compliance & Docs</div>
-        <div>
-          <span class="check">✓</span>HIPAA language and privacy policy templates<br>
-          <span class="check">✓</span>Consent forms for medications, telehealth & memberships<br>
-          <span class="check">✓</span>Operational SOPs and checklists
+      <div class="about-photo">
+        <!-- make sure this file exists in the repo root -->
+        <img src="jude-headshot.jpg" alt="Jude Marino">
+        <p>Jude Marino, Founder — Marino Business Consulting</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container fade-in">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">
+      These are the questions serious clients ask before they decide to move forward.
+    </p>
+
+    <div class="grid-2">
+      <div>
+        <div class="faq-item">
+          <h3>Do I need to be a medical provider to do this?</h3>
+          <p>
+            No. Many clients are entrepreneurs who partner with licensed providers. We help you think through compliant structures and introduce you to medical director and NP pathways so your attorney and providers can finalize the right model.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>How realistic is the 60-day timeline?</h3>
+          <p>
+            The 60-day launch plan is aggressive but achievable for responsive clients. Your timeline depends on your state, decision speed, and third-party approvals. You will always have a clear roadmap and milestones.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>What work do I have to do personally?</h3>
+          <p>
+            You focus on decisions — vision, budget, and hiring — while we handle structure, systems, and execution. We’ll tell you exactly what’s needed from you at each step so you’re never guessing.
+          </p>
         </div>
       </div>
 
-      <div class="feature-row">
-        <div class="feature-label">Systems & EMR</div>
-        <div>
-          <span class="check">✓</span>EMR recommendation and onboarding at bulk rates<br>
-          <span class="check">✓</span>Intake, scheduling, telehealth & follow-up workflows<br>
-          <span class="check">✓</span>Staff training on the day-to-day flow
+      <div>
+        <div class="faq-item">
+          <h3>Are medications and marketing spend included in your fee?</h3>
+          <p>
+            No. You contract directly with pharmacies and the marketing agency. Our role is to structure the relationships, strategy, and systems so your spend actually translates into patient volume and profit.
+          </p>
         </div>
-      </div>
-
-      <div class="feature-row">
-        <div class="feature-label">Marketing & Sales</div>
-        <div>
-          <span class="check">✓</span>Access to a marketing agency with a proven track record<br>
-          <span class="check">✓</span>Launch campaign outline and content plan<br>
-          <span class="check">✓</span>Sales scripts & doctor referral playbook for outreach
+        <div class="faq-item">
+          <h3>Can you help us add peptides, IVs, or hormones to an existing clinic?</h3>
+          <p>
+            Yes. We regularly work with med spas, dental practices, and existing clinics that are layering in GLP-1s, peptides, IV drips, and hormone optimization as new profit centers.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>What’s the first step if I’m interested?</h3>
+          <p>
+            Book a strategy call. We’ll review your market, goals, budget, and timing — and if it’s a fit, we’ll outline exactly what working together looks like so you can make a confident decision.
+          </p>
         </div>
       </div>
     </div>
 
-    <p class="note">
-      All legal, financial, and clinical decisions are ultimately made by your own professional advisors. Marino Business Consulting does not provide medical or legal advice.
-    </p>
-
-    <div class="cta-center" style="margin-top:2rem;">
-      <a href="index.html#contact" class="btn btn-outline">Return to Main Site</a>
+    <div class="cta-center">
+      <a href="https://calendly.com/your-calendly-link" target="_blank" class="btn">Book Your Strategy Call</a>
+      <p class="hero-note" style="margin-top:0.6rem;">
+        No pressure, no fluff — just a serious conversation about whether a turnkey clinic build makes sense for you right now.
+      </p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    <nav>
-      <a href="index.html#top">Home</a> |
-      <a href="services.html">Services</a> |
-      <a href="case-studies.html">Case Studies</a> |
-      <a href="terms.html">Terms</a> |
-      <a href="privacy.html">Privacy</a>
-    </nav>
     <p>&copy; <span id="year"></span> Marino Business Consulting. All rights reserved.</p>
+    <p style="margin-top:0.3rem;">Information provided is for educational and business purposes only and does not constitute medical or legal advice.</p>
   </div>
 </footer>
 
