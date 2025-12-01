@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Turnkey wellness and weight loss clinic launch services from Marino Business Consulting. 60-day buildout, medical infrastructure, pharmacy contracts, EMR, compliance, marketing, and sales systems." />
 
-  <style>
+   <style>
     :root {
       --bg-main: #050505;
       --bg-elevated: #111111;
@@ -45,10 +45,12 @@
       padding: 0 1.5rem;
     }
 
-    .nav {
+    /* HEADER + NAV */
+    header .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 1rem;
       padding: 0.5rem 0;
     }
 
@@ -58,24 +60,26 @@
       gap: 0.75rem;
     }
 
-    .logo img {
+    header .logo img {
       height: 52px;
       border-radius: 3px;
     }
 
-    nav ul {
+    header nav ul {
       display: flex;
-      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.75rem;
       list-style: none;
       font-size: 0.9rem;
     }
 
-    nav a {
+    header nav a {
       padding: 0.35rem 0.7rem;
       border-radius: 999px;
     }
 
-    nav a:hover {
+    header nav a:hover {
       background-color: #1f2933;
     }
 
@@ -97,6 +101,7 @@
       background-color: #b0151b;
       box-shadow: 0 10px 25px rgba(0,0,0,0.6);
       transform: translateY(-1px);
+      text-decoration: none;
     }
 
     .btn-outline {
@@ -379,128 +384,60 @@
       }
     }
 
+    /* Mobile back-to-home bar – hidden on desktop */
+    .mobile-back-home {
+      display: none;
+    }
+
+    /* RESPONSIVE LAYOUT */
     @media (max-width: 800px) {
-      
-      }
       .hero-layout,
       .grid-3,
       .grid-2,
       .about-row {
         grid-template-columns: 1fr;
       }
+
       .hero {
         padding-top: 3rem;
       }
+
       .hero h1 {
         font-size: 2rem;
       }
+
       .about-photo img {
         width: 200px;
         height: 200px;
       }
-    }/* Base header layout (desktop + mobile) */
-header .nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
 
-header .logo img {
-  height: 52px;
-}
+      header nav ul {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+    }
 
-header nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.75rem;
-  font-size: 0.85rem;
-}
+    /* Mobile: show back-to-home bar, slightly shrink logo */
+    @media (max-width: 750px) {
+      header .logo img {
+        height: 44px;
+      }
 
-/* Mobile tweaks – keep logo and menu on same line, allow wrap */
-@media (max-width: 750px) {
-  header .nav {
-    display: flex;
-    flex-direction: row;     /* FORCE logo + menu to stay on same line */
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;         /* If too tight, menu wraps neatly to next line */
-  }
+      .mobile-back-home {
+        display: block;
+        background: #111111;
+        border-bottom: 1px solid #222;
+        padding: 0.6rem 1.5rem;
+      }
 
-  header .logo img {
-    height: 44px;            /* Slightly smaller logo for phones */
-  }
-
-  header nav ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;         /* Menu wraps gracefully under itself if needed */
-    justify-content: flex-end;
-    gap: 0.55rem;
-    width: auto;
-    margin-left: auto;       /* Push menu to the right */
-  }
-
-  header nav ul li a {
-    padding: 0.35rem 0.6rem;
-    border-radius: 999px;
-    background: #111111;
-    white-space: nowrap;     /* Keeps each link on a single line */
-  }
-}
-
-.mobile-back-home {
-  display: none;
-}
-
-@media (max-width: 750px) {
-  .mobile-back-home {
-    display: block;
-    background: #111111;
-    border-bottom: 1px solid #222;
-    padding: 0.6rem 1.5rem;
-  }
-
-  .mobile-back-home a {
-    font-size: 0.9rem;
-    color: #f5f5f5;
-    text-decoration: none;
-  }
-}
-/* Force logo + menu on the same line on phones */
-@media (max-width: 900px) {
-  header .nav {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    flex-wrap: wrap !important;
-    gap: 0.5rem !important;
-  }
-
-  header .logo img {
-    height: 40px !important; /* slightly smaller for mobile */
-  }
-
-  header nav ul {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: flex-end !important;
-    gap: 0.4rem !important;
-    margin-left: auto !important;
-  }
-
-  header nav ul li a {
-    padding: 0.35rem 0.6rem !important;
-    border-radius: 999px !important;
-    background: #111111 !important;
-    white-space: nowrap !important; /* each link stays on one line */
-  }
-}
-
+      .mobile-back-home a {
+        font-size: 0.9rem;
+        color: #f5f5f5;
+        text-decoration: none;
+      }
+    }
   </style>
+
 </head>
 
 <body>
