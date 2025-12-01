@@ -421,26 +421,35 @@ header nav ul {
 /* Mobile tweaks – keep logo and menu on same line, allow wrap */
 @media (max-width: 750px) {
   header .nav {
-    flex-wrap: wrap;           /* allow logo + menu to wrap but stay in one row area */
+    display: flex;
+    flex-direction: row;     /* FORCE logo + menu to stay on same line */
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;         /* If too tight, menu wraps neatly to next line */
   }
 
   header .logo img {
-    height: 44px;              /* slightly smaller on phones */
+    height: 44px;            /* Slightly smaller logo for phones */
   }
 
   header nav ul {
-    flex: 1;
-    justify-content: flex-end; /* menu sits to the right of the logo */
-    row-gap: 0.4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;         /* Menu wraps gracefully under itself if needed */
+    justify-content: flex-end;
+    gap: 0.55rem;
+    width: auto;
+    margin-left: auto;       /* Push menu to the right */
   }
 
   header nav ul li a {
     padding: 0.35rem 0.6rem;
     border-radius: 999px;
-    background: #111111;       /* small pill buttons, easier to tap */
+    background: #111111;
+    white-space: nowrap;     /* Keeps each link on a single line */
   }
 }
+
 .mobile-back-home {
   display: none;
 }
