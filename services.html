@@ -441,6 +441,24 @@ header nav ul {
     background: #111111;       /* small pill buttons, easier to tap */
   }
 }
+.mobile-back-home {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .mobile-back-home {
+    display: block;
+    background: #111111;
+    border-bottom: 1px solid #222;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .mobile-back-home a {
+    font-size: 0.9rem;
+    color: #f5f5f5;
+    text-decoration: none;
+  }
+}
 
   </style>
 </head>
@@ -468,6 +486,9 @@ header nav ul {
     </nav>
   </div>
 </header>
+<div class="mobile-back-home">
+  <a href="index.html#home">← Back to Home</a>
+</div>
 
 
 <!-- HERO / SALES HEADER -->
