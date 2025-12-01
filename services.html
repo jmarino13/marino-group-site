@@ -380,8 +380,7 @@
     }
 
     @media (max-width: 800px) {
-      nav ul {
-        display: none;
+      
       }
       .hero-layout,
       .grid-3,
@@ -399,7 +398,50 @@
         width: 200px;
         height: 200px;
       }
-    }
+    }/* Base header layout (desktop + mobile) */
+header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+header .logo img {
+  height: 52px;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+/* Mobile tweaks – keep logo and menu on same line, allow wrap */
+@media (max-width: 750px) {
+  header .nav {
+    flex-wrap: wrap;           /* allow logo + menu to wrap but stay in one row area */
+    align-items: center;
+  }
+
+  header .logo img {
+    height: 44px;              /* slightly smaller on phones */
+  }
+
+  header nav ul {
+    flex: 1;
+    justify-content: flex-end; /* menu sits to the right of the logo */
+    row-gap: 0.4rem;
+  }
+
+  header nav ul li a {
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+    background: #111111;       /* small pill buttons, easier to tap */
+  }
+}
+
   </style>
 </head>
 
