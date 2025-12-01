@@ -468,6 +468,37 @@ header nav ul {
     text-decoration: none;
   }
 }
+/* Force logo + menu on the same line on phones */
+@media (max-width: 900px) {
+  header .nav {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+  }
+
+  header .logo img {
+    height: 40px !important; /* slightly smaller for mobile */
+  }
+
+  header nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-end !important;
+    gap: 0.4rem !important;
+    margin-left: auto !important;
+  }
+
+  header nav ul li a {
+    padding: 0.35rem 0.6rem !important;
+    border-radius: 999px !important;
+    background: #111111 !important;
+    white-space: nowrap !important; /* each link stays on one line */
+  }
+}
 
   </style>
 </head>
